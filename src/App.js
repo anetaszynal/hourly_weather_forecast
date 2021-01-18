@@ -1,3 +1,4 @@
+import React from 'react'
 import { WeatherTile } from './components/WeatherTile'
 
 function App() {
