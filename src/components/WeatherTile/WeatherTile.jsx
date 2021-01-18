@@ -29,6 +29,7 @@ export const WeatherTile = ({ hour, icon, fall, weather, windInfo, id }) => {
         return 'sobota'
       case 7:
         return 'niedziela'
+      default: return '';
     }
   }
 
@@ -36,7 +37,7 @@ export const WeatherTile = ({ hour, icon, fall, weather, windInfo, id }) => {
     <>
       <Day border={getHourFromUnixTimestamp(hour) === 0}>{getHourFromUnixTimestamp(hour) === 0 ? id < 24 ? 'jutro' : `${getDayName()}` : ''}</Day>
       <TileWrapper>
-        <HourTime>{`${getHourFromUnixTimestamp(hour)}:00`}</HourTime>
+        <HourTime>{getHourFromUnixTimestamp(hour).toString().length === 1 ? `0${getHourFromUnixTimestamp(hour)}:00` : `${getHourFromUnixTimestamp(hour)}:00`}</HourTime>
         <WeatherIcon src = {require(`./icons/${icon}.png`).default} alt = "weather icon"/>
         <TemperatureWrapper/>
         <FallChart weather={weather} fall={fall}/>

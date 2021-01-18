@@ -11,28 +11,28 @@ export const Wind = ({windInfo, id}) => {
   const getWindDirectionTranslation = degree => degree > 22.5 && degree <= 67.5
     ? 'Pn-Wsch.'
     : degree > 67.5 && degree <= 112.5
-      ? 'Wsch.'
+      ? 'Wschodni'
       : degree > 112.5 && degree <= 157.5
         ? 'Pd-Wsch.'
         : degree > 157.5 && degree <= 202.5
-          ? 'Pd.'
+          ? 'Południowy'
           : degree > 202.5 && degree <= 247.5
             ? 'Pd-Zach.'
             : degree > 247.5 && degree <= 292.5
-              ? 'Zach.'
+              ? 'Zachodni'
               : degree > 292.5 && degree <= 337.5
                 ? 'Pn-Zach.'
-                : 'Pn.'
+                : 'Północny'
 
   return(
     <WindWrapper withoutBorder = {id === 0}>
       <WindDirection>
-        <WindIcon degree = {`${degree}deg`}/>
+        <WindIcon degree = {`${degree + 180}deg`}/>
         <WindInfo>{getWindDirectionTranslation(degree)}</WindInfo>
       </WindDirection>
       <WindPower>
         <WindInfo additionalSpace>{getWindSpeedTranslation(speed)}</WindInfo>
-        <WindSpeed>{`${speed} km/h`}</WindSpeed>
+        <WindSpeed>{`${speed.toFixed(0)} km/h`}</WindSpeed>
       </WindPower>
     </WindWrapper>
   )
