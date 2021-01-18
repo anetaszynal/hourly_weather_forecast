@@ -1,24 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Arrow, Shadow, SliderBox, Wrapper } from './styled'
-import { BORDER_WIDTH, LABEL_WIDTH, WEATHER_TILE_WIDTH } from '../../lib/consts'
+import React, { useRef, useState } from 'react'
+import { Arrow, SliderBox, Wrapper } from './styled'
 
-export const Slider = ({ children, weatherLength }) => {
+export const Slider = ({ children }) => {
   const [isScrolling, setIsScrolling] = useState(false)
   const [clientX, setClientX] = useState(0)
   const [scrollX, setScrollX] = useState(0)
   const [showSlider, setShowSlider] = useState(false)
   const weatherRef = useRef()
-
-  const totalScroll = (weatherLength - Math.ceil((document.body.offsetWidth - LABEL_WIDTH - weatherLength * BORDER_WIDTH) / WEATHER_TILE_WIDTH)) * WEATHER_TILE_WIDTH
-
-  useEffect(() => {
-    if (scrollX < 0) {
-      setScrollX(0)
-    }
-    else if (scrollX >= totalScroll){
-      setScrollX(totalScroll)
-    }
-  }, [scrollX, totalScroll])
 
   const onMouseOver = () => setShowSlider(true)
   const onMouseOut = () => setShowSlider(false)
@@ -41,31 +29,28 @@ export const Slider = ({ children, weatherLength }) => {
   }
 
   const onClickNext = () => {
-    weatherRef.current.scrollLeft = scrollX + WEATHER_TILE_WIDTH
-    setScrollX(scrollX + WEATHER_TILE_WIDTH)
+    weatherRef.current.scrollLeft = scrollX + 60
+    setScrollX(scrollX + 60)
   }
 
   const onClickPrevious = () => {
-    weatherRef.current.scrollLeft = scrollX - WEATHER_TILE_WIDTH
-    setScrollX(scrollX - WEATHER_TILE_WIDTH)
+    weatherRef.current.scrollLeft = scrollX - 60
+    setScrollX(scrollX - 60)
   }
 
   return (
-    <Wrapper visible = {isScrolling}
-             ref = {ref => weatherRef.current = ref}
-             onMouseOut = {onMouseOut}
-             onMouseOver = {onMouseOver}
+    <Wrapper ref = {ref => weatherRef.current = ref}
+             onMouseOut={onMouseOut} onMouseOver={onMouseOver}
              onMouseDown = {onMouseDown}
              onMouseUp = {onMouseUp}
              onMouseMove = {onMouseMove}>
-      <SliderBox hidden = {!showSlider || scrollX <= 0} onClick = {onClickPrevious}>
+      <SliderBox hidden={!showSlider} onClick = {onClickPrevious}>
         <Arrow>◀</Arrow>
       </SliderBox>
       {children}
-      <SliderBox hidden = {!showSlider || scrollX >= totalScroll} onClick = {onClickNext} back>
+      <SliderBox hidden={!showSlider} onClick={onClickNext} back>
         <Arrow>◀</Arrow>
       </SliderBox>
-      {scrollX < totalScroll && <Shadow/>}
     </Wrapper>
   )
 }
