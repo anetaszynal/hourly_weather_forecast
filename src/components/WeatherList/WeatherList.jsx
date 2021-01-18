@@ -4,6 +4,7 @@ import { WeatherTile } from '../WeatherTile'
 import { LineLabelChart } from './LineChart'
 import { ChartsWrapper, List, ListItem, PressureChartsWrapper } from './styled'
 import { getFallFromWeather } from '../../lib/utils'
+import { Slider } from '../Slider'
 
 export const WeatherList = () => {
   const { fetchWeather, weather } = useWeather()
@@ -19,7 +20,7 @@ export const WeatherList = () => {
   }
 
   return (
-      <>
+      <Slider>
         <List>
           {
             weather.map((item, index) => (
@@ -44,6 +45,6 @@ export const WeatherList = () => {
         <PressureChartsWrapper>
           <LineLabelChart space={40} fontSize={"11px"} height={80} symbol={" hPa"} color={"#000000"} feature={'pressure'} weather={weather}/>
         </PressureChartsWrapper>
-      </>
+      </Slider>
   )
 }
