@@ -1,13 +1,12 @@
 import styled, { css } from 'styled-components'
 import { ReactComponent as windIcon } from './windIcon.svg'
-import {WEATHER_TILE_WIDTH, BORDER_WIDTH} from '../../lib/consts'
 
 export const TileWrapper = styled.article`
   display: grid;
   grid-template-columns: 60px;
   align-items: center;
   justify-items: center;
-  border-left: solid ${BORDER_WIDTH}px #eee;
+  border-left: solid 1px #eee;
 `
 
 export const Day = styled.p`
@@ -22,7 +21,7 @@ export const Day = styled.p`
   margin: 0;
   
   ${({ border }) => border && css`
-   border-left: solid ${BORDER_WIDTH}px #eee;
+   border-left: solid 1px #eee;
   `}
 `
 
@@ -56,14 +55,14 @@ export const Fall = styled.p`
 
 export const Bar = styled.div`
   background-color: #33ccff;
-  width: ${WEATHER_TILE_WIDTH}px;;
+  width: 60px;
 `;
 
 export const WindWrapper = styled.div`
   margin-left: -1px;
   width: 100%;
   background-color: #f0f0f0;
-  border-left: solid ${BORDER_WIDTH}px #fff;
+  border-left: solid 1px #fff;
   
   ${({ withoutBorder }) => withoutBorder && css`
    border: 0;

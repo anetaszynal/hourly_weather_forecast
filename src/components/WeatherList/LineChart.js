@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react'
-import {WEATHER_TILE_WIDTH} from '../../lib/consts'
+import React from 'react'
 
-export const LineChart = ({ weather, feature, color, symbol, height, space  }) => {
+export const LineLabelChart = ({ weather, feature, color, symbol, height, fontSize, space  }) => {
   const weatherIngredient = weather.map((el) => Math.round(el[feature]))
 
   const minimum = Math.min.apply(null, weatherIngredient)
   const maximum = Math.max.apply(null, weatherIngredient)
   const spaces = space / (maximum - minimum)
 
-  const dataSet = weatherIngredient.map((feature, index) => (`${index * WEATHER_TILE_WIDTH + WEATHER_TILE_WIDTH / 2},${Math.floor((maximum - feature) * spaces) + 23}`))
+  const dataSet = weatherIngredient.map((feature, index) => (`${index * 60 + 30},${Math.floor((maximum - feature) * spaces) + 23}`))
 
   return (
     <svg version = "1.2"
@@ -18,20 +17,20 @@ export const LineChart = ({ weather, feature, color, symbol, height, space  }) =
          viewBox={`0 0 2880 ${height}`}
       >
       <path
-            strokeWidth = "2"
+            stroke-width = "2"
             stroke = {color}
             fill = "none"
-            strokeLinecap = "round"
+            stroke-linecap = "round"
             d = {`M${dataSet.join(' ')}`}>
       </path>
       <g>
         {dataSet.map((item, index) => (
-          <Fragment key={index}>
-            <text textAnchor = "middle" x = {item.split(',')[0]} y = {(item.split(',')[1] - 10)}>
+          <>
+            <text font-size={fontSize} text-anchor = "middle" x = {item.split(',')[0]} y = {(item.split(',')[1] - 10)}>
               {`${weatherIngredient[index]}${symbol}`}
             </text>
             <circle cx = {item.split(',')[0]} cy = {item.split(',')[1]} r = "4" fill={"#ffffff"} stroke={"#000000"} strokeWidth={1}></circle>
-          </Fragment>
+          </>
         ))}
       </g>
     </svg>
