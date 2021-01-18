@@ -10,11 +10,19 @@ export const TileWrapper = styled.article`
 `
 
 export const Day = styled.p`
-  font-size: 12px;
+  color: #888;
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding-left: 6px;
   line-height: 1.25;
   white-space: nowrap;
   height: 16px;
   margin: 0;
+  
+  ${({ border }) => border && css`
+   border-left: solid 1px #eee;
+  `}
 `
 
 export const HourTime = styled.h2`

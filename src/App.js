@@ -1,11 +1,9 @@
 import React from 'react'
-import { WeatherTile } from './components/WeatherTile'
+import { WeatherList } from './components/WeatherList'
 
 function App() {
   return (
-    <div className="App">
-      <WeatherTile/>
-    </div>
+      <WeatherList/>
   );
 }
 
