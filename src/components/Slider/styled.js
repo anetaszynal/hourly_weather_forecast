@@ -5,10 +5,15 @@ export const Wrapper = styled.div`
   grid-template-columns: auto 1fr auto;
   justify-content: space-between;
   align-items: center;
-  overflow: scroll;
+  overflow: hidden;
   scroll-behavior: smooth;
   position: relative;
   cursor: grab;
+  
+  ${({ visible }) => visible && css`
+  overflow: scroll;
+    `}
+ 
   
   &::-webkit-scrollbar {
     transition-duration: 400ms;
@@ -40,7 +45,7 @@ export const SliderBox = styled.div`
   margin-right: -30px;
   display: flex;
   cursor: pointer;
-  z-index: 2;
+  z-index: 6;
   height: 60px;
   width: 30px;
   border-radius: 0 60px 60px 0;
@@ -66,4 +71,13 @@ export const Arrow = styled.div`
     color: white;
     margin: 21px 4px;
 `
+export const Shadow = styled.div`
+    position: fixed;
+    right: -1px;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 3;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0, #fff 100%);
+`;
 
