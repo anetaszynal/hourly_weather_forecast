@@ -1,6 +1,6 @@
 import { WindDirection, WindIcon, WindInfo, WindPower, WindSpeed, WindWrapper } from './styled'
 
-export const Wind = ({windInfo, id}) => {
+export const Wind = ({ windInfo, id }) => {
   const { speed, degree } = windInfo
   const getWindSpeedTranslation = windSpeed => windSpeed < 4.0
     ? 'Słaby'
@@ -24,7 +24,7 @@ export const Wind = ({windInfo, id}) => {
                 ? 'Pn-Zach.'
                 : 'Północny'
 
-  return(
+  return (
     <WindWrapper withoutBorder = {id === 0}>
       <WindDirection>
         <WindIcon degree = {`${degree + 180}deg`}/>

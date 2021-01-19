@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import searchIcon from './searchIcon.svg'
 
 export const Content = styled.form`
   display: grid;
   grid-template-columns: 1fr;
-`;
+`
 
 export const Input = styled.input`
     margin: 20px auto;
@@ -16,4 +16,4 @@ export const Input = styled.input`
     color: #3a3a3a;
     min-width: 250px;
     background: url(${searchIcon}) no-repeat center left 20px ;
-`;
+`

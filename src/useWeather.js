@@ -14,14 +14,13 @@ export const useWeather = () => {
       try {
         setResponseStatus(API_RESPONSE_STATUS.loading)
         const cityKeyResponse = await Axios.get(
-          `http://api.positionstack.com/v1/forward?access_key=${ENVS.GEOLOCATION_API_KEY}&query=${city}`
+          `https://api.opencagedata.com/geocode/v1/json?q=${city}&key=${ENVS.GEOLOCATION_API_KEY}`
         )
-        const cityLatitude = cityKeyResponse.data.data[0].latitude
-        const cityLongitude = cityKeyResponse.data.data[0].longitude
+        const cityLatitude = cityKeyResponse.data.results[0].geometry.lat
+        const cityLongitude = cityKeyResponse.data.results[0].geometry.lng
         const { data, status, statusText } = await Axios.get(
           `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLatitude}&lon=${cityLongitude}&lang=pl&units=metric&exclude=current,minutely,daily,alerts&appid=${ENVS.WEATHER_API_KEY}`,
         )
-
         if (status !== 200) {
           throw new Error(statusText)
         }
@@ -35,7 +34,6 @@ export const useWeather = () => {
     }
   }
   return {
-    city,
     weather,
     responseStatus,
     fetchWeather,

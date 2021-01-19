@@ -11,8 +11,8 @@ export const Wrapper = styled.div`
   cursor: grab;
   
   ${({ visible }) => visible && css`
-  overflow: scroll;
-    `}
+    overflow: scroll;
+  `}
  
   
   &::-webkit-scrollbar {
@@ -59,25 +59,24 @@ export const SliderBox = styled.div`
      right: 0;
      margin-right: 0;
      transform: rotateY(180deg);
-    `}
+   `}
    
-     ${({ hidden }) => hidden && css`
+   ${({ hidden }) => hidden && css`
      visibility: hidden;
-    `}
+   `}
 `
 
 export const Arrow = styled.div`
-    font-size: 18px;
-    color: white;
-    margin: 21px 4px;
+  font-size: 18px;
+  color: white;
+  margin: 21px 4px;
 `
 export const Shadow = styled.div`
-    position: fixed;
-    right: -1px;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    z-index: 3;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0, #fff 100%);
-`;
-
+  position: fixed;
+  right: -1px;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 3;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0, #fff 100%);
+`

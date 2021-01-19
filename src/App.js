@@ -7,7 +7,7 @@ import { Form } from './components/Form'
 import { API_RESPONSE_STATUS } from './lib/consts'
 
 function App () {
-  const { city, fetchWeather, responseStatus, weather, getCityName } = useWeather()
+  const { fetchWeather, responseStatus, weather, getCityName } = useWeather()
 
   const onFormSubmit = (event) => {
     event.preventDefault()
@@ -32,7 +32,7 @@ function App () {
 
   return (
     <>
-      <Form getCityName = {getCityName} onFormSubmit = {onFormSubmit} city = {city}/>
+      <Form getCityName = {getCityName} onFormSubmit = {onFormSubmit}/>
       <WidgetWrapper>
         <LegendList/>
         {displayStatusText()}

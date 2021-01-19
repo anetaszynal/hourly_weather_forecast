@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import {LABEL_WIDTH} from './lib/consts'
+import { LABEL_WIDTH } from './lib/consts'
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -20,11 +20,11 @@ export const WidgetWrapper = styled.main`
   display: grid;
   grid-template-columns: ${LABEL_WIDTH}px 1fr;
   user-select: none;
-`;
+`
 
 export const StatusText = styled.p`
    align-self: center;
    justify-self: center;
    font-weight: bold;
    font-size: 24px;
-`;
+`

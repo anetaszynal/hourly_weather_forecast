@@ -9,7 +9,7 @@ export const Legend = styled.ul`
   grid-template-rows: 16px 30px 35px 110px 60px 60px 50px 100px;
   user-select: none;
   z-index: 1;
-`;
+`
 
 export const LegendLabel = styled.li`
   width: 66px;
@@ -25,10 +25,10 @@ export const LegendLabel = styled.li`
   justify-content: center;
   
   &:first-child{
-   border: 0;
+    border: 0;
   }
-`;
+`
 
 export const CenterText = styled.span`
   text-align: center;
-`;
+`

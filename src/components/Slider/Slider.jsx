@@ -15,7 +15,7 @@ export const Slider = ({ children, weatherLength }) => {
     if (scrollX < 0) {
       setScrollX(0)
     }
-    else if (scrollX >= totalScroll){
+    else if (scrollX >= totalScroll) {
       setScrollX(totalScroll)
     }
   }, [scrollX, totalScroll])

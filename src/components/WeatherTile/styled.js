@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { ReactComponent as windIcon } from './windIcon.svg'
-import {WEATHER_TILE_WIDTH, BORDER_WIDTH} from '../../lib/consts'
+import { BORDER_WIDTH, WEATHER_TILE_WIDTH } from '../../lib/consts'
 
 export const TileWrapper = styled.article`
   display: grid;
@@ -22,7 +22,7 @@ export const Day = styled.p`
   margin: 0;
   
   ${({ border }) => border && css`
-   border-left: solid ${BORDER_WIDTH}px #eee;
+    border-left: solid ${BORDER_WIDTH}px #eee;
   `}
 `
 
@@ -40,7 +40,7 @@ export const WeatherIcon = styled.img`
 
 export const TemperatureWrapper = styled.div`
   height: 110px;
-`;
+`
 
 export const FallWrapper = styled.div`
   height: 60px;
@@ -57,7 +57,7 @@ export const Fall = styled.p`
 export const Bar = styled.div`
   background-color: #33ccff;
   width: ${WEATHER_TILE_WIDTH}px;;
-`;
+`
 
 export const WindWrapper = styled.div`
   margin-left: -1px;
@@ -66,7 +66,7 @@ export const WindWrapper = styled.div`
   border-left: solid ${BORDER_WIDTH}px #fff;
   
   ${({ withoutBorder }) => withoutBorder && css`
-   border: 0;
+    border: 0;
   `}
 `
 export const WindDirection = styled.div`
@@ -74,13 +74,13 @@ export const WindDirection = styled.div`
   grid-template-rows: 1fr auto;
   justify-items: center;
   height: 60px;
-`;
+`
 
 export const WindIcon = styled(windIcon)`
   width: 24px;
   height: 24px;
   margin: 10px 0;
-  transform: rotate(${({degree}) => degree});
+  transform: rotate(${({ degree }) => degree});
 `
 
 export const WindPower = styled.div`
@@ -89,7 +89,7 @@ export const WindPower = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 50px;
-`;
+`
 
 export const WindInfo = styled.p`
   display: inline;
@@ -111,4 +111,4 @@ export const WindSpeed = styled.p`
 export const PressureWrapper = styled.div`
   width: 100%;
   height: 100px;
-`;
+`

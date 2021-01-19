@@ -1,14 +1,7 @@
 import React from 'react'
 import { FallChart } from './FallChart'
 import { Wind } from './Wind'
-import {
-  Day,
-  HourTime,
-  PressureWrapper,
-  TemperatureWrapper,
-  TileWrapper,
-  WeatherIcon,
-} from './styled'
+import { Day, HourTime, PressureWrapper, TemperatureWrapper, TileWrapper, WeatherIcon, } from './styled'
 
 export const WeatherTile = ({ hour, icon, fall, weather, windInfo, id }) => {
   const getHourFromUnixTimestamp = unixTimestamp => new Date(unixTimestamp * 1000).getHours()
@@ -16,7 +9,7 @@ export const WeatherTile = ({ hour, icon, fall, weather, windInfo, id }) => {
   const getDayName = () => {
     switch (getDayFromUnixTimestamp(hour)) {
       case 1:
-        return 'poniedziałek';
+        return 'poniedziałek'
       case 2:
         return 'wtorek'
       case 3:
@@ -29,20 +22,28 @@ export const WeatherTile = ({ hour, icon, fall, weather, windInfo, id }) => {
         return 'sobota'
       case 7:
         return 'niedziela'
-      default: return '';
+      default:
+        return ''
     }
   }
 
-  return(
+  return (
     <>
-      <Day border={getHourFromUnixTimestamp(hour) === 0}>{getHourFromUnixTimestamp(hour) === 0 ? id < 24 ? 'jutro' : `${getDayName()}` : ''}</Day>
+      <Day border = {getHourFromUnixTimestamp(hour) === 0}>
+        {getHourFromUnixTimestamp(hour) === 0 ? id < 24 ? 'jutro' : `${getDayName()}` : ''}
+      </Day>
       <TileWrapper>
-        <HourTime>{getHourFromUnixTimestamp(hour).toString().length === 1 ? `0${getHourFromUnixTimestamp(hour)}:00` : `${getHourFromUnixTimestamp(hour)}:00`}</HourTime>
+        <HourTime>
+          {getHourFromUnixTimestamp(hour).toString().length === 1
+            ? `0${getHourFromUnixTimestamp(hour)}:00`
+          : `${getHourFromUnixTimestamp(hour)}:00`}
+        </HourTime>
         <WeatherIcon src = {require(`./icons/${icon}.png`).default} alt = "weather icon"/>
         <TemperatureWrapper/>
-        <FallChart weather={weather} fall={fall}/>
-        <Wind windInfo={windInfo} id={id}/>
+        <FallChart weather = {weather} fall = {fall}/>
+        <Wind windInfo = {windInfo} id = {id}/>
         <PressureWrapper/>
       </TileWrapper>
     </>
-  )}
+  )
+}

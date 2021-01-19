@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {WEATHER_TILE_WIDTH} from '../../lib/consts'
+import { WEATHER_TILE_WIDTH } from '../../lib/consts'
 
 export const List = styled.ul`
   display: flex;
@@ -16,15 +16,15 @@ export const ListItem = styled.li`
 `
 
 export const ChartsWrapper = styled.div`
-height: 110px;
-position: absolute;
-top: 102px;
-font-weight: 700;
-font-size: 18px;
+  height: 110px;
+  position: absolute;
+  top: 102px;
+  font-weight: 700;
+  font-size: 18px;
 `
 export const PressureChartsWrapper = styled.div`
-height: 80px;
-position: absolute;
-top: 380px;
-font-size: 11px;
+  height: 80px;
+  position: absolute;
+  top: 380px;
+  font-size: 11px;
 `

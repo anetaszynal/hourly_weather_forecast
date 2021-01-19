@@ -1,5 +1,5 @@
-import React from 'react';
-import { Legend, LegendLabel, CenterText } from './styled'
+import React from 'react'
+import { CenterText, Legend, LegendLabel } from './styled'
 
 export const LegendList = () => (
   <Legend>
