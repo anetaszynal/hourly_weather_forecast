@@ -2,5 +2,5 @@
   "short_name": "weather forecast",
   "name": "hourly weather forecast",
   "start_url": ".",
-  "display": "standalone",
+  "display": "standalone"
 }
