@@ -21,3 +21,10 @@ export const WidgetWrapper = styled.main`
   grid-template-columns: ${LABEL_WIDTH}px 1fr;
   user-select: none;
 `;
+
+export const StatusText = styled.p`
+   align-self: center;
+   justify-self: center;
+   font-weight: bold;
+   font-size: 24px;
+`;

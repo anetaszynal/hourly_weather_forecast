@@ -1,28 +1,12 @@
-import React, { useEffect } from 'react'
-import { useWeather } from '../../useWeather'
+import React from 'react'
 import { WeatherTile } from '../WeatherTile'
 import { LineChart } from './LineChart'
 import { ChartsWrapper, List, ListItem, PressureChartsWrapper } from './styled'
 import { getFallFromWeather } from '../../lib/utils'
 import { Slider } from '../Slider'
 
-export const WeatherList = () => {
-  const { fetchWeather, weather } = useWeather()
-
-  useEffect(() => {
-    if (fetchWeather && !weather) {
-      fetchWeather()
-    }
-  }, [fetchWeather, weather])
-
-  if (!weather) {
-    return 'Loading'
-  }
-
-  const weatherLength = weather.length
-
-  return (
-      <Slider weatherLength={weatherLength}>
+export const WeatherList = ({weather}) => (
+      <Slider weatherLength={weather.length}>
         <List>
           {
             weather.map((item, index) => (
@@ -48,5 +32,4 @@ export const WeatherList = () => {
           <LineChart space={40} height={80} symbol={" hPa"} color={"#000000"} feature={'pressure'} weather={weather}/>
         </PressureChartsWrapper>
       </Slider>
-  )
-}
+  );
