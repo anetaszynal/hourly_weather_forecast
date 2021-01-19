@@ -30,11 +30,10 @@ You will find there:
 - HTML
 - CSS
 - Styled components
-- JavaScript 2020
+- JavaScript (ECMAScript 2020)
 - React.js
 - React Hooks (also custom hooks)
 - JSX
-- API
 
 ## How to use?
 
