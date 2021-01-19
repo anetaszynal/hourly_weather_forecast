@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/hourly_weather_forecast/static/js/main.0f6c93ea.chunk.js",
-    "main.js.map": "/hourly_weather_forecast/static/js/main.0f6c93ea.chunk.js.map",
+    "main.js": "/hourly_weather_forecast/static/js/main.168f53bf.chunk.js",
+    "main.js.map": "/hourly_weather_forecast/static/js/main.168f53bf.chunk.js.map",
     "runtime-main.js": "/hourly_weather_forecast/static/js/runtime-main.6dbc5b73.js",
     "runtime-main.js.map": "/hourly_weather_forecast/static/js/runtime-main.6dbc5b73.js.map",
     "static/js/2.a9aeabeb.chunk.js": "/hourly_weather_forecast/static/js/2.a9aeabeb.chunk.js",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.6dbc5b73.js",
     "static/js/2.a9aeabeb.chunk.js",
-    "static/js/main.0f6c93ea.chunk.js"
+    "static/js/main.168f53bf.chunk.js"
   ]
 }
