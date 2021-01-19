@@ -4,17 +4,17 @@
     "main.js.map": "/hourly_weather_forecast/static/js/main.9bcd8b20.chunk.js.map",
     "runtime-main.js": "/hourly_weather_forecast/static/js/runtime-main.6dbc5b73.js",
     "runtime-main.js.map": "/hourly_weather_forecast/static/js/runtime-main.6dbc5b73.js.map",
-    "static/js/2.072c08a6.chunk.js": "/hourly_weather_forecast/static/js/2.072c08a6.chunk.js",
-    "static/js/2.072c08a6.chunk.js.map": "/hourly_weather_forecast/static/js/2.072c08a6.chunk.js.map",
+    "static/js/2.11ffaac2.chunk.js": "/hourly_weather_forecast/static/js/2.11ffaac2.chunk.js",
+    "static/js/2.11ffaac2.chunk.js.map": "/hourly_weather_forecast/static/js/2.11ffaac2.chunk.js.map",
     "static/js/3.35ae7e49.chunk.js": "/hourly_weather_forecast/static/js/3.35ae7e49.chunk.js",
     "static/js/3.35ae7e49.chunk.js.map": "/hourly_weather_forecast/static/js/3.35ae7e49.chunk.js.map",
     "index.html": "/hourly_weather_forecast/index.html",
-    "static/js/2.072c08a6.chunk.js.LICENSE.txt": "/hourly_weather_forecast/static/js/2.072c08a6.chunk.js.LICENSE.txt",
+    "static/js/2.11ffaac2.chunk.js.LICENSE.txt": "/hourly_weather_forecast/static/js/2.11ffaac2.chunk.js.LICENSE.txt",
     "static/media/windIcon.5487f895.svg": "/hourly_weather_forecast/static/media/windIcon.5487f895.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6dbc5b73.js",
-    "static/js/2.072c08a6.chunk.js",
+    "static/js/2.11ffaac2.chunk.js",
     "static/js/main.9bcd8b20.chunk.js"
   ]
 }
